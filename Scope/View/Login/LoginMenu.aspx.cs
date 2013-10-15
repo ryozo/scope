@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Scope.Dto;
+using Scope.Const;
 
 namespace Scope.View
 {
@@ -11,8 +13,15 @@ namespace Scope.View
     {
         protected void Login_Click(object sender, EventArgs e)
         {
-            
-            Service.Login.LoginService.login(userId, password);
+            UserInfo userInfo = Service.Login.LoginService.login(userId.Text, password.Text);
+            if (userInfo != null)
+            {
+                Session[SystemConstants.SessionKey.USER_INFO] = userInfo;
+                Response.Redirect("~/View/Menu/Menu.aspx");
+            }
+
+            messages.HeaderText = "エラーメッセージ";
+
         }
 
         protected void Page_Load(object sender, EventArgs e)

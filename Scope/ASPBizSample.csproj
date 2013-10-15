@@ -55,6 +55,10 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -63,6 +67,7 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="View\Common\Header.aspx" />
     <Content Include="View\Login\LoginMenu.aspx" />
+    <Content Include="View\Menu\Menu.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -107,6 +112,11 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Const\SystemConstants.cs" />
+    <Compile Include="Dao\AbstractDao.cs" />
+    <Compile Include="Dao\EmployeeDao.cs" />
+    <Compile Include="Dao\UserDao.cs" />
+    <Compile Include="DbAccessor\DataBaseAccessor.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -115,10 +125,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dto\UserInfo.cs" />
+    <Compile Include="Entity\Employee.cs" />
+    <Compile Include="Entity\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Base\AbstractService.cs" />
     <Compile Include="Service\Login\LoginService.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -134,10 +147,15 @@
     <Compile Include="View\Login\LoginMenu.aspx.designer.cs">
       <DependentUpon>LoginMenu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Menu\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="View\Menu\" />
     <Folder Include="View\ShopIn\" />
   </ItemGroup>
   <ItemGroup>

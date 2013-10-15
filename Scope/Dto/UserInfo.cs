@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Scope.Entity;
 
 namespace Scope.Dto
 {
@@ -11,25 +12,25 @@ namespace Scope.Dto
     public class UserInfo
     {
         /// <summary>
-        /// ユーザID
+        /// User情報
         /// </summary>
-        private String userId;
+        private User user;
 
         /// <summary>
-        /// ユーザ名
+        /// Employee情報
         /// </summary>
-        private String userName;
+        private Employee employee;
 
-        public String UserId
+        public User User
         {
-            set { this.userId = value; }
-            get { return userId; }
+            set { this.user = value; }
+            get { return user; }
         }
 
-        public String UserName
+        public Employee Employee
         {
-            set { this.userName = value; }
-            get { return userName; }
+            set { this.employee = value; }
+            get { return employee; }
         }
     }
 }
