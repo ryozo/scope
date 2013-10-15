@@ -13,15 +13,6 @@ namespace Scope.View {
     public partial class WebForm1 {
         
         /// <summary>
-        /// LoginForm コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm LoginForm;
-        
-        /// <summary>
         /// messages コントロール。
         /// </summary>
         /// <remarks>

@@ -1,14 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginMenu.aspx.cs" Inherits="Scope.View.WebForm1" %>
+﻿<%@ Page Title="Login" Language="C#" AutoEventWireup="true" MasterPageFile="~/Scope.master" CodeBehind="LoginMenu.aspx.cs" Inherits="Scope.View.WebForm1" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>ログイン画面</title>
-</head>
-<body>
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <!-- #include file="../Common/Header.aspx" -->
-    <form id="LoginForm" runat="server">
+</asp:Content>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent" >
     <div>
         <asp:ValidationSummary runat="server" id="messages" />
         <table>
@@ -46,6 +41,4 @@
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
         SelectCommand="SELECT * FROM [User]"></asp:SqlDataSource>
-    </form>
-</body>
-</html>
+</asp:Content>
