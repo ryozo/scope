@@ -1,16 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="Scope.View.Menu.WebForm1" %>
+﻿<%@ Page Title="Login" Language="C#" AutoEventWireup="true" MasterPageFile="~/Scope.master" CodeBehind="Menu.aspx.cs" Inherits="Scope.View.Menu" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <!-- #include file="../Common/Header.aspx" -->
+</asp:Content>
+<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent" >
     <div>
-    this is menu
+        <fieldset>
+            <legend>簡易メニュー</legend>
+            <asp:HyperLink ID="InRegistLink" runat="server" Font-Size="Large" Font-Underline="true" EnableViewState="false">新規登録</asp:HyperLink><br />
+            <asp:HyperLink ID="SearchLink" runat="server" Font-Size="Large" Font-Underline="true">検索・更新</asp:HyperLink><br />
+            <asp:HyperLink ID="OutRegistLink" runat="server" Font-Size="Large" Font-Underline="true">完了登録</asp:HyperLink>
+        </fieldset>
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>

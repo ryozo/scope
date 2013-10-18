@@ -11,6 +11,11 @@ body
     color: #696969;
 }
 
+table
+{
+    border-spacing:0px;
+}
+
 a:link, a:visited
 {
     color: #034af3;
@@ -291,4 +296,23 @@ div.accountInfo
 {
     text-align: right;
     padding-right: 10px;
+}
+
+/* Input Field
+----------------------------------------------------------*/
+
+table.inputTable td
+{
+    border: 1px solid #496077;
+}
+
+table.inputTable .index
+{
+    background-color: #4b6c9e;
+    color : #fff;
+}
+
+input.required
+{
+    background-color: #ffff00;
 }

@@ -66,6 +66,7 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="View\Common\Header.aspx" />
+    <Content Include="View\InRegist\InRegist.aspx" />
     <Content Include="View\Login\LoginMenu.aspx" />
     <Content Include="View\Menu\Menu.aspx" />
     <Content Include="Web.config" />
@@ -115,6 +116,7 @@
     </Compile>
     <Compile Include="Const\SystemConstants.cs" />
     <Compile Include="Dao\AbstractDao.cs" />
+    <Compile Include="Dao\BookEvalDao.cs" />
     <Compile Include="Dao\EmployeeDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="DbAccessor\DataBaseAccessor.cs" />
@@ -126,6 +128,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dto\UserInfo.cs" />
+    <Compile Include="Entity\BookEval.cs" />
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="Global.asax.cs">
@@ -140,6 +143,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\InRegist\InRegist.aspx.cs">
+      <DependentUpon>InRegist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InRegist\InRegist.aspx.designer.cs">
+      <DependentUpon>InRegist.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Login\LoginMenu.aspx.cs">
       <DependentUpon>LoginMenu.aspx</DependentUpon>
@@ -171,7 +181,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\ShopIn\" />
+    <Folder Include="Dao\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />

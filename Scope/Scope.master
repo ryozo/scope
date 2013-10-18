@@ -20,9 +20,6 @@
             </div>
             <div class="loginDisplay">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">ログイン</a> ]
-                    </AnonymousTemplate>
                     <LoggedInTemplate>
                         ようこそ <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
                         [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="ログアウト" LogoutPageUrl="~/"/> ]
@@ -32,7 +29,7 @@
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="ホーム"/>
+                        <asp:MenuItem NavigateUrl="~/View/Menu/Menu.aspx" Text="ホーム"/>
                         <asp:MenuItem NavigateUrl="~/ScopeAbout.aspx" Text="このサイトについて"/>
                     </Items>
                 </asp:Menu>

@@ -7,18 +7,36 @@
 // </自動生成>
 //------------------------------------------------------------------------------
 
-namespace Scope.View.Menu {
+namespace Scope.View {
     
     
-    public partial class WebForm1 {
+    public partial class Menu {
         
         /// <summary>
-        /// form1 コントロール。
+        /// InRegistLink コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.HyperLink InRegistLink;
+        
+        /// <summary>
+        /// SearchLink コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink SearchLink;
+        
+        /// <summary>
+        /// OutRegistLink コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink OutRegistLink;
     }
 }
