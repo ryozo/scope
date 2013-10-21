@@ -23,7 +23,7 @@ namespace Scope.Dao
         public User findByUserId(String userId)
         {
             String sql = "select * from user where userid = @userid";
-            SqlParameter param = new SqlParameter("@userid", userId);
+            SqlParameter param = makeParameter("@userid", userId);
             SqlDataReader reader = null;
             User user = null;
 
@@ -33,8 +33,8 @@ namespace Scope.Dao
                 if (reader.Read())
                 {
                     user = new User();
-                    user.UserId = reader["userId"].ToString();
-                    user.Password = reader["password"].ToString();
+                    user.UserId = (String) read(reader, "userId");
+                    user.Password = (String)read(reader, "password");
                 }
             }
             finally
@@ -54,8 +54,8 @@ namespace Scope.Dao
         public User findByUserIdAndPassword(String userId, String password)
         {
             String sql = "select * from [User] where userid = @userid and password = @password";
-            SqlParameter userIdParam = new SqlParameter("@userid", userId);
-            SqlParameter passwordParam = new SqlParameter("@password", password);
+            SqlParameter userIdParam = makeParameter("@userid", userId);
+            SqlParameter passwordParam = makeParameter("@password", password);
 
             SqlDataReader reader = null;
             User user = null;
@@ -67,8 +67,8 @@ namespace Scope.Dao
                 if (reader.Read())
                 {
                     user = new User();
-                    user.UserId = reader["userId"].ToString();
-                    user.Password = reader["password"].ToString();
+                    user.UserId = (String) read(reader, "userId");
+                    user.Password = (String)read(reader, "password");
                     return user;
                 }
 

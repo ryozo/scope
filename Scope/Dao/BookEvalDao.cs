@@ -26,8 +26,8 @@ namespace Scope.Dao
                 while (reader.Read())
                 {
                     BookEval eval = new BookEval();
-                    eval.Id = long.Parse(reader["id"].ToString());
-                    eval.Eval = reader["eval"].ToString();
+                    eval.Id = long.Parse((String) read(reader, "id"));
+                    eval.Eval = (String) read(reader, "eval");
                     evalList.Add(eval);
                 }
             }
@@ -46,7 +46,7 @@ namespace Scope.Dao
             }
             String sql = "select * from BookEval where id = @id";
             SqlDataReader reader = null;
-            SqlParameter param = new SqlParameter("@id", id);
+            SqlParameter param = makeParameter("@id", id);
             BookEval eval = null;
 
             try
@@ -55,8 +55,8 @@ namespace Scope.Dao
                 if (reader.Read())
                 {
                     eval = new BookEval();
-                    eval.Id = long.Parse(reader["id"].ToString());
-                    eval.Eval = reader["evaluation"].ToString();
+                    eval.Id = long.Parse((String) read(reader, "id"));
+                    eval.Eval = (String) read(reader, "evaluation");
                 }
             }
             finally

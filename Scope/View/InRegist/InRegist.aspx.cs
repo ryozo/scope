@@ -39,7 +39,7 @@ namespace Scope.View.InRegist
             {
                 bookInfo.EvalType = Int64.Parse(BookEval.SelectedItem.Value);
             }
-            bookInfo.Eval = eval.Text;
+            bookInfo.Eval = trim(eval.Text);
 
             BookManageService service = new BookManageService();
             service.regist(bookInfo);

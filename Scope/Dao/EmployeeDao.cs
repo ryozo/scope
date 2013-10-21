@@ -17,7 +17,7 @@ namespace Scope.Dao
         public Employee findByEmployeeNo(String employeeNo)
         {
             String sql = "select * from employee where employeeno = @employeeno";
-            SqlParameter param = new SqlParameter("@employeeno", employeeNo);
+            SqlParameter param = makeParameter("@employeeno", employeeNo);
             SqlDataReader reader = null;
             Employee employee = null;
 
@@ -45,7 +45,7 @@ namespace Scope.Dao
 
         public Employee findByUserId(String userId) {
             String sql = "select * from employee where userid = @userid";
-            SqlParameter param = new SqlParameter("@userid", userId);
+            SqlParameter param = makeParameter("@userid", userId);
             SqlDataReader reader = null;
             Employee employee = null;
 
@@ -55,11 +55,11 @@ namespace Scope.Dao
                 if (reader.Read())
                 {
                     employee = new Employee();
-                    employee.EmployeeNo = reader["employeeNo"].ToString();
-                    employee.EmployeeName = reader["employeeName"].ToString();
-                    employee.Sex = Boolean.Parse(reader["sex"].ToString());
-                    employee.TelNo = reader["telNo"].ToString();
-                    employee.UserId = reader["userId"].ToString();
+                    employee.EmployeeNo = (String) read(reader, "employeeNo");
+                    employee.EmployeeName = (String) read(reader, "employeeName");
+                    employee.Sex = Boolean.Parse((String) read(reader, "sex"));
+                    employee.TelNo = (String) read(reader, "telNo");
+                    employee.UserId = (String) read(reader, "userId");
                     return employee;
                 }
             }

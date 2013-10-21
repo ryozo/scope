@@ -19,23 +19,23 @@ namespace Scope.Dao
         {
             String sql = "insert into book (bookType, title, isbn, publisher, price, buydate, status, bookEval_id, eval) values (@bookType, @title, @isbn, @publisher, @price, @buydate, @status, @bookEval_id, @eval)";
 
-            SqlParameter bookTypeParam = new SqlParameter("@bookType", book.BookType);
-            SqlParameter titleParam = new SqlParameter("@title", book.Title);
-            SqlParameter isbnParam = new SqlParameter("@isbn", book.Isbn);            
-            SqlParameter publichserParam = new SqlParameter("@publisher", book.Publisher);
-            SqlParameter priceParam = new SqlParameter("@price", book.Price);
-            SqlParameter buyDateParam = new SqlParameter("@buydate", book.BuyDate);
-            SqlParameter statusParam = new SqlParameter("@status", book.Status);
+            SqlParameter bookTypeParam = makeParameter("@bookType", book.BookType);
+            SqlParameter titleParam = makeParameter("@title", book.Title);
+            SqlParameter isbnParam = makeParameter("@isbn", book.Isbn);
+            SqlParameter publichserParam = makeParameter("@publisher", book.Publisher);
+            SqlParameter priceParam = makeParameter("@price", book.Price);
+            SqlParameter buyDateParam = makeParameter("@buydate", book.BuyDate);
+            SqlParameter statusParam = makeParameter("@status", book.Status);
             SqlParameter evalTypeParam = null;
             if (book.BookEval != null)
             {
-                evalTypeParam = new SqlParameter("@bookEval_id", book.BookEval.Id);
+                evalTypeParam = makeParameter("@bookEval_id", book.BookEval.Id);
             }
             else
             {
-                evalTypeParam = new SqlParameter("@bookEval_id", null);
+                evalTypeParam = makeParameter("@bookEval_id", null);
             }
-            SqlParameter evalParam = new SqlParameter("@eval", book.Eval);
+            SqlParameter evalParam = makeParameter("@eval", book.Eval);
 
             SqlParameter[] sqlParameters = new SqlParameter[] {
                 bookTypeParam, titleParam, isbnParam, publichserParam, priceParam, buyDateParam, statusParam, evalTypeParam, evalParam
@@ -57,7 +57,7 @@ namespace Scope.Dao
         public Book findByIsbn(String isbn)
         {
             String sql = "select * from book where isbn = @isbn";
-            SqlParameter param = new SqlParameter("@isbn", isbn);
+            SqlParameter param = makeParameter("@isbn", isbn);
             SqlDataReader reader = null;
 
             Book book = null;
@@ -67,16 +67,16 @@ namespace Scope.Dao
                 if (reader.Read())
                 {
                     book = new Book();
-                    book.Id = (Int64)reader["id"];
-                    book.BookType = (BookType)Enum.ToObject(typeof(BookType), (Int32) reader["bookType"]);
-                    book.Title = (String)reader["title"];
-                    book.Isbn = (String)reader["isbn"];
-                    book.Publisher = (String)reader["publisher"];
-                    book.Price = (Int32)reader["price"];
-                    book.BuyDate = (DateTime)reader["buydate"];
-                    book.Status = (BookStatus)Enum.ToObject(typeof(BookStatus), (Int32) reader["status"]);
+                    book.Id = (Int64?) read(reader, "id");
+                    book.BookType = (BookType)Enum.ToObject(typeof(BookType), (Int32) read(reader, "bookType"));
+                    book.Title = (String) read(reader, "title");
+                    book.Isbn = (String)read(reader, "isbn");
+                    book.Publisher = (String) read(reader, "publisher");
+                    book.Price = (Int32?) read(reader, "price");
+                    book.BuyDate = (DateTime) read(reader, "buydate");
+                    book.Status = (BookStatus)Enum.ToObject(typeof(BookStatus), (Int32) read(reader, "status"));
                     // TODO BookEvalをたどって取得する？
-                    book.Eval = (String)reader["eval"];
+                    book.Eval = (String) read(reader, "eval");
                 }
             }
             finally
@@ -96,7 +96,7 @@ namespace Scope.Dao
         public User findByUserId(String userId)
         {
             String sql = "select * from user where userid = @userid";
-            SqlParameter param = new SqlParameter("@userid", userId);
+            SqlParameter param = makeParameter("@userid", userId);
             SqlDataReader reader = null;
             User user = null;
 
@@ -106,8 +106,8 @@ namespace Scope.Dao
                 if (reader.Read())
                 {
                     user = new User();
-                    user.UserId = reader["userId"].ToString();
-                    user.Password = reader["password"].ToString();
+                    user.UserId = (String) read(reader, "userId");
+                    user.Password = (String) read(reader, "password");
                 }
             }
             finally
@@ -127,8 +127,8 @@ namespace Scope.Dao
         public User findByUserIdAndPassword(String userId, String password)
         {
             String sql = "select * from [User] where userid = @userid and password = @password";
-            SqlParameter userIdParam = new SqlParameter("@userid", userId);
-            SqlParameter passwordParam = new SqlParameter("@password", password);
+            SqlParameter userIdParam = makeParameter("@userid", userId);
+            SqlParameter passwordParam = makeParameter("@password", password);
 
             SqlDataReader reader = null;
             User user = null;
@@ -140,8 +140,8 @@ namespace Scope.Dao
                 if (reader.Read())
                 {
                     user = new User();
-                    user.UserId = reader["userId"].ToString();
-                    user.Password = reader["password"].ToString();
+                    user.UserId = (String) read(reader, "userId");
+                    user.Password = (String)read(reader, "password");
                     return user;
                 }
 
