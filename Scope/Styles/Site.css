@@ -316,3 +316,8 @@ input.required
 {
     background-color: #ffff00;
 }
+
+.buttonarea
+{
+    text-align:right;
+}

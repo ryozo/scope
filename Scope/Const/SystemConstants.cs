@@ -18,5 +18,21 @@ namespace Scope.Const
 
             public const String USER_INFO = "session_userinfo";
         }
+
+        /// <summary>
+        /// View層で利用する定数を定義する。
+        /// </summary>
+        public class ViewLayerConstants
+        {
+            /// <summary>
+            /// DropDownListの未選択値を表すValue
+            /// </summary>
+            public const String EMPTY_DRPDWN_VALUE = "0";
+
+            /// <summary>
+            /// DropDownListの未選択を表すText
+            /// </summary>
+            public const String EMPTY_DRPDWN_TEXT = "---選択してください---";
+        }
     }
 }

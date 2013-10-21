@@ -5,7 +5,9 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent" >
     <div>
-        <asp:ValidationSummary runat="server" id="messages" />
+        <span class="failureNotification">
+            <asp:Literal ID="ErrorMessage" runat="server"></asp:Literal>
+        </span>
         <table>
           <tr>
             <td>USER ID</td>

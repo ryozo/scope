@@ -54,6 +54,26 @@ namespace Scope.DbAccessor
         }
 
         /// <summary>
+        /// 引数をうけった
+        /// </summary>
+        /// <param name="insertSql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public Int32 executeNonQuery(String sql, params SqlParameter[] parameters)
+        {
+            SqlCommand command = new SqlCommand(sql, connection);
+            if (parameters != null)
+            {
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    command.Parameters.Add(parameters[i]);
+                }
+            }
+
+            return command.ExecuteNonQuery();
+        }
+
+        /// <summary>
         /// DB接続を閉じます。
         /// </summary>
         public void close()

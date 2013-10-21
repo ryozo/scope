@@ -7,73 +7,28 @@
 // </自動生成>
 //------------------------------------------------------------------------------
 
-namespace Scope.View.InRegist {
+namespace Scope.View.Search {
     
     
-    public partial class InRegist {
+    public partial class SearchCondition {
         
         /// <summary>
-        /// TitleRequiredFieldValidator コントロール。
+        /// BookType コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator TitleRequiredFieldValidator;
+        protected global::System.Web.UI.WebControls.DropDownList BookType;
         
         /// <summary>
-        /// isbnRequiredFieldValidator コントロール。
+        /// SqlDataSource4 コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator isbnRequiredFieldValidator;
-        
-        /// <summary>
-        /// priceRegularValidator コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator priceRegularValidator;
-        
-        /// <summary>
-        /// BookTypeBiz コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton BookTypeBiz;
-        
-        /// <summary>
-        /// BookTypeMagazine コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton BookTypeMagazine;
-        
-        /// <summary>
-        /// BookTypeComic コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton BookTypeComic;
-        
-        /// <summary>
-        /// BookTypeLib コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton BookTypeLib;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
         
         /// <summary>
         /// title コントロール。
@@ -175,30 +130,21 @@ namespace Scope.View.InRegist {
         protected global::System.Web.UI.WebControls.TextBox eval;
         
         /// <summary>
-        /// commentType コントロール。
+        /// GridView1 コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList commentType;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// SqlDataSource2 コントロール。
+        /// SqlDataSource3 コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-        
-        /// <summary>
-        /// Regist コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Regist;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
     }
 }

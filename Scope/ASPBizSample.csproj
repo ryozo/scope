@@ -69,6 +69,7 @@
     <Content Include="View\InRegist\InRegist.aspx" />
     <Content Include="View\Login\LoginMenu.aspx" />
     <Content Include="View\Menu\Menu.aspx" />
+    <Content Include="View\Search\SearchCondition.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -114,6 +115,9 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dao\BookInfoDao.cs" />
+    <Compile Include="Dto\BookInfo.cs" />
+    <Compile Include="Enum\BookTypeEnum.cs" />
     <Compile Include="Const\SystemConstants.cs" />
     <Compile Include="Dao\AbstractDao.cs" />
     <Compile Include="Dao\BookEvalDao.cs" />
@@ -128,14 +132,17 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dto\UserInfo.cs" />
+    <Compile Include="Entity\Book.cs" />
     <Compile Include="Entity\BookEval.cs" />
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\User.cs" />
+    <Compile Include="Enum\BookStatusEnum.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Base\AbstractService.cs" />
+    <Compile Include="Service\BookManage\BookManageService.cs" />
     <Compile Include="Service\Login\LoginService.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -179,10 +186,15 @@
     <Compile Include="ScopeAbout.aspx.designer.cs">
       <DependentUpon>ScopeAbout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\Search\SearchCondition.aspx.cs">
+      <DependentUpon>SearchCondition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Search\SearchCondition.aspx.designer.cs">
+      <DependentUpon>SearchCondition.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dao\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />

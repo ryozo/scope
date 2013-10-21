@@ -20,7 +20,7 @@ namespace Scope.View
                 Response.Redirect("~/View/Menu/Menu.aspx");
             }
 
-            messages.HeaderText = "エラーメッセージ";
+            ErrorMessage.Text = "ユーザIDまたはパスワードが間違っています。再入力してください。";
 
         }
 

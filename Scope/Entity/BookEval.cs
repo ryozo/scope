@@ -7,10 +7,10 @@ namespace Scope.Entity
 {
     public class BookEval
     {
-        private String id;
+        private long id;
         private String eval;
 
-        public String Id
+        public Int64 Id
         {
             set { this.id = value; }
             get { return id; }
