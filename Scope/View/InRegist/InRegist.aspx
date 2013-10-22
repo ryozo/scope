@@ -12,6 +12,7 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent" >
     <div>
         <asp:ValidationSummary runat="server" ForeColor="Red" />
+        <asp:Label ID="Message" runat="server" Text=""></asp:Label>
         <asp:RequiredFieldValidator ID="TitleRequiredFieldValidator" runat="server" Display="None" ErrorMessage="タイトルは必須入力です。" ForeColor="red" ControlToValidate="title"></asp:RequiredFieldValidator>
         <asp:RequiredFieldValidator ID="isbnRequiredFieldValidator" runat="server" Display="None" ErrorMessage="ISBNは必須入力です。" ForeColor="red" ControlToValidate="isbn"></asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="priceRegularValidator" runat="server" Display="None" ErrorMessage="金額は数値で入力してください。" ValidationExpression="^[0-9]*$" ForeColor="Red" ControlToValidate="price"></asp:RegularExpressionValidator>

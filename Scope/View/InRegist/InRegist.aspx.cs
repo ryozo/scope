@@ -8,6 +8,7 @@ using Scope.Dto;
 using Scope.Entity;
 using Scope.Service.BookManage;
 using Scope.Const;
+using Scope.Exception;
 
 namespace Scope.View.InRegist
 {
@@ -24,26 +25,41 @@ namespace Scope.View.InRegist
 
         protected void Regist_Click(object sender, EventArgs e)
         {
-            // Service呼び出し用のDto作成
-            BookInfo bookInfo = new BookInfo();
-            bookInfo.BookType = getBookType();
-            bookInfo.Title = trim(title.Text);
-            bookInfo.Isbn = trim(isbn.Text);
-            bookInfo.Publisher = trim(publisher.Text);
-            if (!String.IsNullOrEmpty(price.Text))
+            try
             {
-                bookInfo.Price = int.Parse(price.Text);
+                // Service呼び出し用のDto作成
+                BookInfo bookInfo = new BookInfo();
+                bookInfo.BookType = getBookType();
+                bookInfo.Title = trim(title.Text);
+                bookInfo.Isbn = trim(isbn.Text);
+                bookInfo.Publisher = trim(publisher.Text);
+                if (!String.IsNullOrEmpty(price.Text))
+                {
+                    bookInfo.Price = int.Parse(price.Text);
+                }
+                bookInfo.BuyDate = buyDate.SelectedDate;
+                if (!SystemConstants.ViewLayerConstants.EMPTY_DRPDWN_VALUE.Equals(BookEval.SelectedItem.Value))
+                {
+                    bookInfo.EvalType = Int64.Parse(BookEval.SelectedItem.Value);
+                }
+                bookInfo.Eval = trim(eval.Text);
+
+                BookManageService service = new BookManageService();
+
+                service.regist(bookInfo);
+                Message.Text = "書籍情報を登録しました";
+                Message.ForeColor = System.Drawing.Color.Black;
             }
-            bookInfo.BuyDate = buyDate.SelectedDate;
-            if (!SystemConstants.ViewLayerConstants.EMPTY_DRPDWN_VALUE.Equals(BookEval.SelectedItem.Value))
+            catch (ApplicationRuntimeException exception)
             {
-                bookInfo.EvalType = Int64.Parse(BookEval.SelectedItem.Value);
+                // TODO アスペクトにする。
+                Message.Text = exception.Message;
+                Message.ForeColor = System.Drawing.Color.Red;
+                if (exception.InnerException != null)
+                {
+                    throw exception.InnerException;
+                }
             }
-            bookInfo.Eval = trim(eval.Text);
-
-            BookManageService service = new BookManageService();
-            service.regist(bookInfo);
-
         }
 
         private BookType getBookType()

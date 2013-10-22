@@ -6,6 +6,7 @@ using Scope.Entity;
 using Scope.Dto;
 using Scope.Dao;
 using Scope.DbAccessor;
+using Scope.Exception;
 
 namespace Scope.Service.BookManage
 {
@@ -37,24 +38,31 @@ namespace Scope.Service.BookManage
                 if (eval == null)
                 {
                     // TODO Exceptionを確認
-                    throw new ApplicationException("評価マスタ上に存在しない評価です。");
+                    throw new ApplicationRuntimeException("評価マスタ上に存在しない評価です。");
                 }
             }
 
-            // BookEntityの作成
-            Book book = new Book();
-            book.BookType = bookInfo.BookType;
-            book.Title = bookInfo.Title;
-            book.Isbn = bookInfo.Isbn;
-            book.Publisher = bookInfo.Publisher;
-            book.Price = bookInfo.Price;
-            book.BuyDate = bookInfo.BuyDate;
-            book.Status = bookInfo.Status;
-            book.BookEval = eval;
-            book.Eval = bookInfo.Eval;
-
+            // Bookの存在有無チェック
             BookDao bookDao = new BookDao(accessor);
-            bookDao.insert(book);
+            Book existsBook = bookDao.findByIsbn(bookInfo.Isbn);
+            if (existsBook != null)
+            {
+                throw new ApplicationRuntimeException("この本は既に登録済みです。入力内容をご確認ください");
+            }
+
+            // BookEntityの作成
+            Book registBook = new Book();
+            registBook.BookType = bookInfo.BookType;
+            registBook.Title = bookInfo.Title;
+            registBook.Isbn = bookInfo.Isbn;
+            registBook.Publisher = bookInfo.Publisher;
+            registBook.Price = bookInfo.Price;
+            registBook.BuyDate = bookInfo.BuyDate;
+            registBook.Status = bookInfo.Status;
+            registBook.BookEval = eval;
+            registBook.Eval = bookInfo.Eval;
+
+            bookDao.insert(registBook);
         }
 
     }

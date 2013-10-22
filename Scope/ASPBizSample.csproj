@@ -137,6 +137,7 @@
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="Enum\BookStatusEnum.cs" />
+    <Compile Include="Exception\ApplicationRuntimeException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
