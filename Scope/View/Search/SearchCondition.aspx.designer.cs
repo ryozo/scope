@@ -67,15 +67,6 @@ namespace Scope.View.Search {
         protected global::System.Web.UI.WebControls.TextBox price;
         
         /// <summary>
-        /// BookEval コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList BookEval;
-        
-        /// <summary>
         /// SqlDataSource1 コントロール。
         /// </summary>
         /// <remarks>

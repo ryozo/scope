@@ -13,7 +13,6 @@ namespace Scope.View
         {
             InRegistLink.NavigateUrl = "~/View/InRegist/InRegist.aspx";
             SearchLink.NavigateUrl = "~/View/Search/SearchCondition.aspx";
-            OutRegistLink.NavigateUrl = "~/View/OutRegist/OutRegist.aspx";
         }
     }
 }

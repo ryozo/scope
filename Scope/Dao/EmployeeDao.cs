@@ -57,7 +57,7 @@ namespace Scope.Dao
                     employee = new Employee();
                     employee.EmployeeNo = (String) read(reader, "employeeNo");
                     employee.EmployeeName = (String) read(reader, "employeeName");
-                    employee.Sex = Boolean.Parse((String) read(reader, "sex"));
+                    employee.Sex = Boolean.Parse(read(reader, "sex").ToString());
                     employee.TelNo = (String) read(reader, "telNo");
                     employee.UserId = (String) read(reader, "userId");
                     return employee;

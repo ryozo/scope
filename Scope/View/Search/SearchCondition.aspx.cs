@@ -14,7 +14,7 @@ namespace Scope.View.Search
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BookType.Items.Insert(0, "");
+//            BookType.Items.Insert(0, "");
         }
     }
 }

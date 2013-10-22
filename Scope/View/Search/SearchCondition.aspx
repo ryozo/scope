@@ -20,6 +20,7 @@
     <div>
         <h1>書籍 - 検索条件</h1>
         <table class="inputTable">
+        <!--
           <tr>
             <td class="index">種別</td>
             <td colspan="3" class="style1">
@@ -32,6 +33,7 @@
             SelectCommand="SELECT DISTINCT [bookType] FROM [Book]"></asp:SqlDataSource>
             </td>
           </tr>
+          -->
           <tr>
             <td class="index" style="width: 156px">タイトル（前方一致）</td>
             <td><asp:TextBox ID="title" runat="server"  MaxLength="50" Width="333px" AutoPostBack="true"></asp:TextBox></td>
@@ -106,8 +108,7 @@
             
             SelectCommand="SELECT * FROM [Book] 
 WHERE 
-  ([bookType] = ISNULL(@bookType, [bookType]))
-  AND ([title] LIKE ISNULL(@title, [title]) + '%')
+  ([title] LIKE ISNULL(@title, [title]) + '%')
   AND ([isbn] LIKE ISNULL(@isbn, [isbn]) + '%')
   AND ([publisher] LIKE ISNULL(@publisher, [publisher]) + '%')
   AND ([eval] LIKE '%' + ISNULL(@eval, [eval]) + '%')
@@ -115,6 +116,7 @@ WHERE
             OldValuesParameterFormatString="original_{0}" 
             DeleteCommand="DELETE FROM [Book] WHERE [id] = @original_id" 
             InsertCommand="INSERT INTO [Book] ([bookType], [title], [isbn], [publisher], [price], [buydate], [status], [bookEval_id], [eval]) VALUES (@bookType, @title, @isbn, @publisher, @price, @buydate, @status, @bookEval_id, @eval)" 
+            
             
             UpdateCommand="UPDATE [Book] SET [bookType] = @bookType, [title] = @title, [isbn] = @isbn, [publisher] = @publisher, [price] = @price, [buydate] = @buydate, [status] = @status, [bookEval_id] = @bookEval_id, [eval] = @eval WHERE [id] = @original_id">
             <DeleteParameters>
@@ -132,8 +134,6 @@ WHERE
                 <asp:Parameter Name="eval" Type="String" />
             </InsertParameters>
             <SelectParameters>
-                <asp:ControlParameter ControlID="BookType" Name="bookType" 
-                    PropertyName="SelectedValue" Type="Int64" />
                 <asp:ControlParameter ControlID="title" ConvertEmptyStringToNull="False" 
                     Name="title" PropertyName="Text" Type="String" />
                 <asp:ControlParameter ControlID="isbn" ConvertEmptyStringToNull="False" 

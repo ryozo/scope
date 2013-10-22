@@ -55,7 +55,7 @@ namespace Scope.Dao
                 if (reader.Read())
                 {
                     eval = new BookEval();
-                    eval.Id = long.Parse((String) read(reader, "id"));
+                    eval.Id = Int64.Parse(read(reader, "id").ToString());
                     eval.Eval = (String) read(reader, "evaluation");
                 }
             }
