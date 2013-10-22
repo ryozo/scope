@@ -16,10 +16,5 @@ namespace Scope.View.Search
         {
             BookType.Items.Insert(0, "");
         }
-
-        protected void title_TextChanged(object sender, EventArgs e)
-        {
-//            GridView1.Rows.OfType<DataGrid>().Select(
-        }
     }
 }

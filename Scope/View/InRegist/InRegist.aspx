@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="Login" Language="C#" AutoEventWireup="true" MasterPageFile="~/Scope.master" CodeBehind="InRegist.aspx.cs" Inherits="Scope.View.InRegist.InRegist" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-    <!-- #include file="../Common/Header.aspx" -->
     <style type="text/css">
         .style1
         {

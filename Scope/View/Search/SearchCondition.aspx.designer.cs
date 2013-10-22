@@ -67,42 +67,6 @@ namespace Scope.View.Search {
         protected global::System.Web.UI.WebControls.TextBox price;
         
         /// <summary>
-        /// buyDate コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar buyDate;
-        
-        /// <summary>
-        /// StatusUnread コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton StatusUnread;
-        
-        /// <summary>
-        /// StatusRead コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton StatusRead;
-        
-        /// <summary>
-        /// StatusNoBuy コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton StatusNoBuy;
-        
-        /// <summary>
         /// BookEval コントロール。
         /// </summary>
         /// <remarks>
