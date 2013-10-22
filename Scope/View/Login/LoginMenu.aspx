@@ -30,17 +30,4 @@
         <asp:Button ID="Login" runat="server" Text="Login" onclick="Login_Click" 
             Height="21px" />
     </div>
-
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-        DataKeyNames="UserID" DataSourceID="SqlDataSource1">
-        <Columns>
-            <asp:BoundField DataField="UserID" HeaderText="UserID" ReadOnly="True" 
-                SortExpression="UserID" />
-            <asp:BoundField DataField="Password" HeaderText="Password" 
-                SortExpression="Password" />
-        </Columns>
-    </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-        SelectCommand="SELECT * FROM [User]"></asp:SqlDataSource>
 </asp:Content>
